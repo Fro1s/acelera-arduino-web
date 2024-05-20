@@ -52,6 +52,24 @@ export default function Register() {
                     Endereço de email
                   </label>
                 </div>
+
+                <div className="relative">
+                  <input placeholder="Confirme seu email"
+                    className="peer h-10 w-full border-b-2 border-gray-300 text-white bg-transparent
+                              placeholder-transparent focus:outline-none focus:border-purple-500"
+                    required=""
+                    id="confirm-email"
+                    name="confirm-email"
+                    type="email"
+                  />
+                  <label htmlFor="confirm-email"
+                    className="absolute left-0 -top-3.5 text-gray-500 text-sm transition-all
+                              peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2
+                              peer-focus:-top-3.5 peer-focus:text-purple-500 peer-focus:text-sm">
+                    Confirme seu email
+                  </label>
+                </div>
+
                 <div className="relative">
                   <input className="peer h-10 w-full border-b-2 border-gray-300 text-white bg-transparent
                                     placeholder-transparent focus:outline-none focus:border-purple-500"
@@ -68,6 +86,24 @@ export default function Register() {
                          htmlFor="password">
                     Senha
                  </label>
+                </div>
+
+                <div className="relative">
+                  <input className="peer h-10 w-full border-b-2 border-gray-300 text-white bg-transparent
+                                    placeholder-transparent focus:outline-none focus:border-purple-500"
+                         placeholder="Confirme sua senha"
+                         required=""
+                         id="confirm-password"
+                         name="confirm-password"
+                         type="password"
+                  />
+                  <label className="absolute left-0 -top-3.5 text-gray-500 text-sm transition-all
+                                    peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400
+                                    peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-purple-500
+                                    peer-focus:text-sm"
+                         htmlFor="confirm-password">
+                          Confirme sua senha
+                  </label>
                 </div>
 
                 <div className="flex items-center justify-between">
