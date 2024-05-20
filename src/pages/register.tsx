@@ -122,7 +122,7 @@ export default function Register() {
                 <button className="w-full py-2 px-4 bg-blue-500 hover:bg-blue-700 rounded-md shadow-lg text-white
                                font-semibold transition duration-200"
                   type="submit">
-                  Entrar
+                  Cadastrar
                 </button>
               </form>
 
