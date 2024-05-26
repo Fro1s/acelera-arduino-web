@@ -1,12 +1,13 @@
 import { ModeToggle } from "@/components/toggle";
+import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
 
 export default function Login() {
   return (
     <main className="items-center">
       <header className="grid grid-cols-3 items-center mt-3">
-          <div className="space-x-4 mr-4 justifi-self-start">
-            <Link href="/index">
+          <div className="space-x-4 mr-4 ml-4 justify-self-start">
+            <Link href="/">
               <button className="cursor-pointer duration-200 hover:scale-125 active:scale-100" title="Voltar">
                 <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 24 24" className="stroke-blue-500">
                   <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" d="M11 6L5 12M5 12L11 18M5 12H19"></path>
@@ -56,8 +57,8 @@ export default function Login() {
                   <input className="peer h-10 w-full border-b-2 border-gray-300 text-white bg-transparent
                                     placeholder-transparent focus:outline-none focus:border-purple-500"
                     placeholder="Senha"
-                   required=""
-                   id="password"
+                    required=""
+                    id="password"
                     name="password"
                     type="password"
                   />

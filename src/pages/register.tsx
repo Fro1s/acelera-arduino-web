@@ -5,8 +5,8 @@ export default function Register() {
   return (
     <main className="items-center">
       <header className="grid grid-cols-3 items-center mt-3">
-          <div className="space-x-4 mr-4 justifi-self-start">
-            <Link href="/index">
+          <div className="space-x-4 mr-4 ml-4 justify-self-start">
+            <Link href="/">
               <button className="cursor-pointer duration-200 hover:scale-125 active:scale-100" title="Voltar">
                 <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 24 24" className="stroke-blue-500">
                   <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" d="M11 6L5 12M5 12L11 18M5 12H19"></path>
@@ -31,10 +31,26 @@ export default function Register() {
               </h2>
 
               <p style={{ animation: "appear 3s ease-out" }} className="text-center text-gray-200">
-                    Entre em sua conta
+                    Cadastre sua conta
               </p>
 
               <form method="POST" action="#" className="space-y-6">
+                <div className="relative">
+                  <input placeholder="Digite seu nome de usuário"
+                         className="peer h-10 w-full border-b-2 border-gray-300 text-white bg-transparent
+                                    placeholder-transparent focus:outline-none focus:border-purple-500"
+                         required=""
+                         id="username"
+                         name="username"
+                  />
+                  <label htmlFor="username"
+                         className="absolute left-0 -top-3.5 text-gray-500 text-sm transition-all
+                                    peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2
+                                    peer-focus:-top-3.5 peer-focus:text-purple-500 peer-focus:text-sm">
+                            Nome de usuário
+                  </label>
+                </div>
+
                 <div className="relative">
                   <input placeholder="john@example.com"
                          className="peer h-10 w-full border-b-2 border-gray-300 text-white bg-transparent
