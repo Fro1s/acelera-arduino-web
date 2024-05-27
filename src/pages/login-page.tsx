@@ -1,4 +1,5 @@
 import { ModeToggle } from "@/components/toggle";
+import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
 import { useState } from 'react';
 
@@ -25,7 +26,6 @@ const Login = () => {
       // Trate o erro
     }
   };
-
 
 
 return (
