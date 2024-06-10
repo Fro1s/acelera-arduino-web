@@ -1,95 +1,57 @@
-import { ModeToggle } from "@/components/toggle";
-import { Button } from "../components/ui/button";
-import Link from "next/link";
-import Image from "next/image";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import Image from "next/image"
+import { ModeToggle } from "@/components/toggle"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
-export default function Home() {
+export default function Index() {
+
     return (
-        <main className="items-center">
-
-            {/**Header**/}
-
-            <nav className="grid grid-cols-3 items-center mt-4">
-                <div className="mr-4"></div>
-                <h1 className="text-center text-2xl font-bold">Home Page</h1>
-                <div className="space-x-4 mr-4 justify-self-end">
-                        <Button asChild className="px-4 py-2 z-20 bg-blue-400 rounded-md text-white relative font-semibold font-sans
-                        after:-z-20 after:absolute after:h-1 after:w-1 after:bg-blue-800 after:left-3 overflow-hidden after:bottom-0
-                        after:translate-y-full after:rounded-md after:hover:scale-[300] after:hover:transition-all
-                        after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700
-                        [text-shadow:1px_2px_1px_#1512BE;] hover:[text-shadow:1px_1px_1px_#B7B5F3] text-lg">
-                            <Link href="/login-page">Login</Link>
-                        </Button>
-
-                        <Button asChild className="px-4 py-2 z-30 bg-blue-400 rounded-md text-white relative font-semibold font-sans
-                        after:-z-20 after:absolute after:h-1 after:w-1 after:bg-blue-800 after:left-3 overflow-hidden after:bottom-0
-                        after:translate-y-full after:rounded-md after:hover:scale-[300] after:hover:transition-all
-                        after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700
-                        [text-shadow:1px_2px_1px_#1512BE;] hover:[text-shadow:1px_1px_1px_#B7B5F3] text-lg">
-                            <Link href="/register">Cadastrar</Link>
-                        </Button>
-
-                    <ModeToggle />
-                </div>
-            </nav>
-
-            {/**Header**/}
-
-            <div className="grid grid-cols-2 space-x-4 mt-12 mx-4">
-                <div className="relative overflow-hidden w-90 h-60 rounded-3xl cursor-pointer text-2xl font-bold bg-blue-400">
-                    <div className="z-50 absolute w-full h-full peer">
-                    </div>
-
-                    <div className="absolute peer-hover:-top-20 peer-hover:-left-16 peer-hover:w-[140%] peer-hover:h-[140%] -top-32 -left-16 w-32 h-44 rounded-full bg-sky-700 transition-all duration-500">
-                    </div>
-                    <div className="absolute flex text-xl text-center items-end justify-end peer-hover:right-0 peer-hover:rounded-b-none peer-hover:bottom-0 peer-hover:items-center
-                        peer-hover:justify-center peer-hover:w-full peer-hover:h-full -bottom-60 -right-40 w-36 h-90 rounded-full bg-sky-700 transition-all duration-500">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />
-                        Sed nonummy libero ac urna. Nulla facilisi.<br />
-                        Praesent id justo in risus bibendum placerat. Pellentesque habitant<br />
-                        morbi tristique senectus et netus et malesuada fames ac turpis egestas.<br />
-                        - FATEC Cruzeiro -
-                    </div>
-                    <div className="w-full h-full items-center justify-center flex uppercase">
-                        Plotter de desenho CNC
-                    </div>
-                </div>
-
-                <div className="relative overflow-hidden w-90 h-60 rounded-3xl cursor-pointer text-2xl font-bold bg-blue-400">
-                    <div className="z-50 absolute w-full h-full peer">
-                    </div>
-
-                    <div className="absolute peer-hover:-top-20 peer-hover:-left-16 peer-hover:w-[140%] peer-hover:h-[140%] -top-32 -left-16 w-32 h-44 rounded-full bg-sky-700 transition-all duration-500">
-                    </div>
-                    <div className="absolute flex text-xl text-center items-end justify-end peer-hover:right-0 peer-hover:rounded-b-none peer-hover:bottom-0 peer-hover:items-center
-                        peer-hover:justify-center peer-hover:w-full peer-hover:h-full -bottom-60 -right-40 w-36 h-90 rounded-full bg-sky-700 transition-all duration-500">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />
-                        Sed nonummy libero ac urna. Nulla facilisi.<br />
-                        Praesent id justo in risus bibendum placerat. Pellentesque habitant<br />
-                        morbi tristique senectus et netus et malesuada fames ac turpis egestas.<br />
-                        - FATEC Cruzeiro -
-                    </div>
-                    <div className="w-full h-full items-center justify-center flex uppercase">
-                        Plotter de desenho CNC
-                    </div>
-                </div>
-
-                <Image
-                    src="/plotter.jpg"
-                    width={900}
-                    height={1100}
-                    alt="não foi"
-                    className="my-4 rounded" />
-
+        <main className="w-full h-full flex flex-col">
+            <div className="w-[50vw]">
+                <Carousel className="w-[40vw] h-full">
+                    <CarouselContent className="">
+                        {Array.from({ length: 5 }).map((_, index) => (
+                            <CarouselItem className="" key={index}>
+                                <div className="p-1">
+                                    <Card className="h-screen bg-transparent shadow-none border-none w-full">
+                                        <CardContent className="flex rounded aspect-square w-full h-full items-center justify-center p-6">
+                                            <Image
+                                                src="/plotter.jpg"
+                                                width={800}
+                                                height={1200}
+                                                alt="não foi"
+                                                className="my-4 h-full"
+                                            />
+                                        </CardContent>
+                                    </Card>
+                                </div>
+                            </CarouselItem>
+                        ))}
+                    </CarouselContent>
+                </Carousel>
             </div>
 
-            <div>
-                <Button className="group flex justify-center items-center gap-2 group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-neutral-900
+            <div className="absolute flex mt-4 space-x-4 right-10">
+                <Button asChild className="px-4 py-2 z-20 bg-neutral-900 rounded-md text-white relative font-semibold font-sans
+                        after:-z-20 after:absolute after:h-1 after:w-1 after:bg-blue-800 after:left-3 overflow-hidden after:bottom-0
+                        after:translate-y-full after:rounded-md after:hover:scale-[300] after:hover:transition-all
+                        after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700
+                        [text-shadow:1px_2px_1px_#1512BE;] hover:[text-shadow:1px_1px_1px_#B7B5F3] text-lg">
+                    <Link href="/login-page">Login</Link>
+                </Button>
+                <Button asChild className="px-4 py-2 z-30 bg-neutral-900 rounded-md text-white relative font-semibold font-sans
+                        after:-z-20 after:absolute after:h-1 after:w-1 after:bg-blue-800 after:left-3 overflow-hidden after:bottom-0
+                        after:translate-y-full after:rounded-md after:hover:scale-[300] after:hover:transition-all
+                        after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700
+                        [text-shadow:1px_2px_1px_#1512BE;] hover:[text-shadow:1px_1px_1px_#B7B5F3] text-lg">
+                    <Link href="/register">Cadastrar</Link>
+                </Button>
+                <Button className="group gap-2 group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-neutral-900
                           duration-500 hover:duration-500 underline underline-offset-2 hover:underline hover:underline-offset-4 origin-left hover:decoration-2 hover:text-neutral-300
                           relative bg-neutral-900 px-10 py-4 border text-left p-3 text-gray-50 text-base font-bold rounded-lg overflow-hidden after:absolute after:z-10 after:w-12 after:h-12
-                          after:content[''] after:bg-sky-900 after:-left-8 after:top-8 after:rounded-full after:blur-lg hover:after:animate-pulse ml-8 mt-4">
+                          after:content[''] after:bg-sky-900 after:-left-8 after:top-8 after:rounded-full after:blur-lg hover:after:animate-pulse ml-8">
                     <svg
                         className="size-6 fill-neutral-50"
                         height="100"
@@ -107,7 +69,10 @@ export default function Home() {
                     </svg>
                     Github
                 </Button>
+                <ModeToggle />
             </div>
+
+
         </main>
-    );
+    )
 }
