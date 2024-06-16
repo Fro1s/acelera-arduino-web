@@ -46,8 +46,6 @@ const Register = () => {
     if (response.ok) {
       setSuccessModalIsOpen(true);
     } else {
-      // O registro falhou
-      // Mostrar uma mensagem de erro, etc.
       setErrorModalIsOpen(true);
     }
   };
@@ -81,7 +79,7 @@ const Register = () => {
           </h2>
 
           <p style={{ animation: "appear 3s ease-out" }} className="text-center text-gray-200">
-            Entre em sua conta
+            Cadastre sua conta
           </p>
 
           <form method="POST" action="#" className="space-y-6" onSubmit={handleSubmit}>
@@ -90,7 +88,6 @@ const Register = () => {
               <input
                 placeholder="Nome"
                 className="peer h-10 w-full border-b-2 border-gray-300 text-white bg-transparent placeholder-transparent focus:outline-none focus:border-purple-500"
-                required=""
                 id="name"
                 name="name"
                 type="text"
@@ -106,7 +103,6 @@ const Register = () => {
               <input
                 placeholder="john@example.com"
                 className="peer h-10 w-full border-b-2 border-gray-300 text-white bg-transparent placeholder-transparent focus:outline-none focus:border-purple-500"
-                required=""
                 id="email"
                 name="email"
                 type="email"
@@ -122,7 +118,6 @@ const Register = () => {
               <input
                 placeholder="Confirme seu email"
                 className="peer h-10 w-full border-b-2 border-gray-300 text-white bg-transparent placeholder-transparent focus:outline-none focus:border-purple-500"
-                required=""
                 id="confirm-email"
                 name="confirm-email"
                 type="email"
@@ -138,7 +133,6 @@ const Register = () => {
               <input
                 className="peer h-10 w-full border-b-2 border-gray-300 text-white bg-transparent placeholder-transparent focus:outline-none focus:border-purple-500"
                 placeholder="Senha"
-                required=""
                 id="password"
                 name="password"
                 type="password"
@@ -154,7 +148,6 @@ const Register = () => {
               <input
                 className="peer h-10 w-full border-b-2 border-gray-300 text-white bg-transparent placeholder-transparent focus:outline-none focus:border-purple-500"
                 placeholder="Confirme sua senha"
-                required=""
                 id="confirm-password"
                 name="confirm-password"
                 type="password"
@@ -200,14 +193,14 @@ const Register = () => {
 
       <div id="login_sucess" tabIndex={-1} className={`overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full ${sucessModalIsOpen ? '' : 'hidden'}`}>
         <div className="relative p-4 w-full max-w-md max-h-full">
-          <div className="relativ rounded-lg shadow bg-gradient-to-r from-blue-900 to-blue-600  ">
+          <div className="relativ rounded-lg shadow bg-gradient-to-r bg-black  ">
             <button type="button" className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="login_sucess" onClick={() => setSuccessModalIsOpen(false)}>
               <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
               </svg>
               <span className="sr-only">Close modal</span>
             </button>
-            <div className="p-4 md:p-5 text-center">
+            <div className="p-4 md:p-5 bg-zinc-900 rounded-md text-center">
               <BadgeCheckIcon className="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" />
               <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Cadastro realizado com sucesso!</h3>
               <button data-modal-hide="login_sucess" type="button" className="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center" onClick={() => setSuccessModalIsOpen(false)}>
@@ -234,12 +227,12 @@ const Register = () => {
               <svg className="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
               </svg>
-              <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete this product?</h3>
+              <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Erro ao realizar cadastro</h3>
               <button data-modal-hide="login_error" type="button" className="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center" onClick={() => setErrorModalIsOpen(false)}>
-                Yes
+                Tentar Novamente
               </button>
               <button data-modal-hide="login_error" type="button" className="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" onClick={() => setErrorModalIsOpen(false)}>
-                No
+                <a href="/">Sair</a>
               </button>
             </div>
           </div>

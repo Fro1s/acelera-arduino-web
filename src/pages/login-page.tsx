@@ -1,4 +1,5 @@
 import { ModeToggle } from "@/components/toggle";
+import { Button } from "@/components/ui/button";
 import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
 import { useState } from 'react';
@@ -65,7 +66,6 @@ return (
             <input placeholder="john@example.com"
               className="peer h-10 w-full border-b-2 border-gray-300 text-white bg-transparent
                                 placeholder-transparent focus:outline-none focus:border-purple-500"
-              required=""
               id="email"
               name="email"
               type="email"
@@ -84,7 +84,6 @@ return (
             <input className="peer h-10 w-full border-b-2 border-gray-300 text-white bg-transparent
                                 placeholder-transparent focus:outline-none focus:border-purple-500"
               placeholder="Senha"
-              required=""
               id="password"
               name="password"
               type="password"
@@ -114,11 +113,11 @@ return (
             </a>
           </div>
 
-          <button className="w-full py-2 px-4 bg-blue-500 hover:bg-blue-700 rounded-md shadow-lg text-white
+          <Button asChild className="w-full py-2 px-4 bg-blue-500 hover:bg-blue-700 rounded-md shadow-lg text-white
                            font-semibold transition duration-200"
             type="submit">
-            Entrar
-          </button>
+            <Link href="/enter">Entrar</Link>
+          </Button>
         </form>
 
         <div className="text-center text-gray-300">
